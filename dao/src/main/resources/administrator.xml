@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zq.dao.AdministratorDao">
+
+    <sql id="columns">
+        id, username, password, create_time, modify_time, status
+    </sql>
+
+    <select id="getById" resultType="com.zq.entity.Administrator">
+        SELECT <include refid="columns"/> FROM administrator WHERE id = #{id}
+    </select>
+
+    <update id="update" parameterType="com.zq.entity.Administrator">
+        UPDATE administrator
+        <set>
+            <if test="username != null and username != ''">
+                username = #{username},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password},
+            </if>
+            <if test="modifyTime != null">
+                modify_time = #{modifyTime}
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+</mapper>
