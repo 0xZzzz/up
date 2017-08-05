@@ -14,7 +14,8 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-main.xml");
 
         AdministratorDao administratorDao = context.getBean(AdministratorDao.class);
-        administratorDao.getById(1L);
+
+        System.err.println(administratorDao.getById(1L));
     }
 
 }
