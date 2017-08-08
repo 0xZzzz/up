@@ -12,5 +12,7 @@
 
     <import resource="classpath:spring/spring-dao.xml"/>
     <import resource="classpath:spring/spring-aop.xml"/>
+    <import resource="classpath:spring/spring-dubbo.xml"/>
+    <import resource="classpath:spring/spring-provider.xml"/>
     <!--<import resource="classpath:spring/spring-web.xml"/>-->
 </beans>
