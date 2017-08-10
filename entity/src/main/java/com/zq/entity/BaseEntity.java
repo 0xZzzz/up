@@ -1,8 +1,9 @@
 package com.zq.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public abstract class BaseEntity {
+public abstract class BaseEntity implements Serializable {
 
     /**
      * 主键id

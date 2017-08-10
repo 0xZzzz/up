@@ -8,6 +8,8 @@
         id, username, password, create_time, modify_time, status
     </sql>
 
+    <cache/>
+
     <select id="getById" resultType="com.zq.entity.Administrator">
         SELECT <include refid="columns"/> FROM administrator WHERE id = #{id}
     </select>
