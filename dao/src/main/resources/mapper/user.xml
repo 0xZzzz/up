@@ -10,11 +10,11 @@
 
     <cache/>
 
-    <select id="getById" resultType="com.zq.entity.User">
+    <select id="getById" resultType="User">
         SELECT <include refid="columns"/> FROM t_user WHERE id = #{id}
     </select>
 
-    <update id="update" parameterType="com.zq.entity.User">
+    <update id="update" parameterType="User">
         UPDATE t_user
         <set>
             <if test="username != null and username != ''">

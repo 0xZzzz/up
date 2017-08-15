@@ -1,4 +1,4 @@
-CREATE TABLE `user` (
+CREATE TABLE `t_user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
   `username` varchar(20) NOT NULL COMMENT '用户名',
   `password` varchar(20) NOT NULL COMMENT '密码',
