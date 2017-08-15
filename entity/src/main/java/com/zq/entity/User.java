@@ -1,9 +1,9 @@
 package com.zq.entity;
 
 /**
- * 管理员
+ * 用户
  */
-public class Administrator extends BaseEntity {
+public class User extends BaseEntity {
 
     /**
      * 用户名
@@ -33,7 +33,7 @@ public class Administrator extends BaseEntity {
 
     @Override
     public String toString() {
-        return super.toString() + ", Administrator{" +
+        return super.toString() + ", User{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';

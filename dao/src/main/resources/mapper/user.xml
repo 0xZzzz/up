@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zq.dao.AdministratorDao">
+<mapper namespace="com.zq.dao.UserDao">
 
     <sql id="columns">
         id, username, password, create_time, modify_time, status
@@ -10,12 +10,12 @@
 
     <cache/>
 
-    <select id="getById" resultType="com.zq.entity.Administrator">
-        SELECT <include refid="columns"/> FROM administrator WHERE id = #{id}
+    <select id="getById" resultType="com.zq.entity.User">
+        SELECT <include refid="columns"/> FROM t_user WHERE id = #{id}
     </select>
 
-    <update id="update" parameterType="com.zq.entity.Administrator">
-        UPDATE administrator
+    <update id="update" parameterType="com.zq.entity.User">
+        UPDATE t_user
         <set>
             <if test="username != null and username != ''">
                 username = #{username},
