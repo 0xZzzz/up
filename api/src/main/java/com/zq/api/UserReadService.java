@@ -1,7 +1,9 @@
 package com.zq.api;
 
+import com.zq.api.entity.UserVO;
+
 public interface UserReadService {
 
-    boolean auth(String username, String password);
+    UserVO getById(long id);
 
 }

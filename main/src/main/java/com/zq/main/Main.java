@@ -1,6 +1,6 @@
 package com.zq.main;
 
-import com.zq.dao.UserDao;
+import com.zq.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -15,8 +15,10 @@ public class Main {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-main.xml");
 
-        UserDao u = context.getBean(UserDao.class);
-        System.err.println(u.getById(1));
+        UserService userService = context.getBean(UserService.class);
+        userService.getById(1L);
+
+        System.err.println("---------- end ----------");
 
         CountDownLatch latch = new CountDownLatch(1);
         latch.await();

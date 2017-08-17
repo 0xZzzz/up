@@ -1,7 +1,9 @@
 package com.zq.service;
 
+import com.zq.api.entity.UserVO;
+
 public interface UserService {
 
-    boolean auth(String username, String password);
+    UserVO getById(long id);
 
 }
