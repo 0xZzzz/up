@@ -13,7 +13,6 @@ public class UserReadServiceImpl implements UserReadService {
     @Autowired
     private UserDao userDao;
 
-    @Override
     public UserVO getById(long id) {
         UserVO userVO = new UserVO();
         BeanUtils.copyProperties(userDao.getById(id), userVO);
