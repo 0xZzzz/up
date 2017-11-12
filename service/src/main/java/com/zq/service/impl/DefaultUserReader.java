@@ -1,6 +1,6 @@
-package com.zq.api.impl;
+package com.zq.service.impl;
 
-import com.zq.api.UserReadService;
+import com.zq.service.UserReader;
 import com.zq.api.entity.UserVO;
 import com.zq.dao.UserDao;
 import org.springframework.beans.BeanUtils;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserReadServiceImpl implements UserReadService {
+public class DefaultUserReader implements UserReader {
 
     @Autowired
     private UserDao userDao;

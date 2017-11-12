@@ -1,6 +1,6 @@
 package com.zq.main;
 
-import com.zq.service.UserService;
+import com.zq.service.UserReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -15,8 +15,8 @@ public class Main {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-main.xml");
 
-        UserService userService = context.getBean(UserService.class);
-        userService.getById(1L);
+        UserReader userReader = context.getBean(UserReader.class);
+        userReader.getById(1L);
 
         System.err.println("---------- end ----------");
 

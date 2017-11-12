@@ -1,4 +1,4 @@
-package com.zq.service;
+package com.zq.api;
 
 import com.zq.api.entity.UserVO;
 

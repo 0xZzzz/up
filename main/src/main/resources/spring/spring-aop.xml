@@ -3,9 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <aop:aspectj-autoproxy/>
 
-    <bean id="daoAdvice" class="com.zq.common.advice.DaoAdvice"/>
+    <bean id="serviceAdvice" class="com.zq.common.advice.CommonAdvice"/>
+    <aop:config>
+        <aop:aspect ref="serviceAdvice">
+            <aop:around method="proceed" pointcut="execution (* com.zq.service.*.*(..))"/>
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="daoAdvice" class="com.zq.common.advice.CommonAdvice"/>
     <aop:config>
         <aop:aspect ref="daoAdvice">
             <aop:around method="proceed" pointcut="execution (* com.zq.dao.*.*(..))"/>
